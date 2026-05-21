@@ -1,2 +1,5 @@
+﻿<img width="256" height="256" alt="DrakesItemForge icon" src="icon.png" />
+
 # DrakesItemForge
-A Jötunn companion for valheim mods. Easily create new item clones without having to code a thing!
+
+**DrakesWorkshop** — YAML/JSON item definitions for Valheim modders (stub).

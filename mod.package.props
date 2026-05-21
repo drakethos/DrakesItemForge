@@ -1,0 +1,19 @@
+<Project>
+  <PropertyGroup>
+    <ThunderstoreName>DrakesItemForge</ThunderstoreName>
+    <ThunderstoreAuthor>DrakeMods</ThunderstoreAuthor>
+    <RootNamespace>DrakesItemForge</RootNamespace>
+    <AssemblyName>DrakesItemForge</AssemblyName>
+    <Version>0.1.0</Version>
+    <BepInPluginName>DrakesItemForge</BepInPluginName>
+    <BepInGuid>com.drakesworkshop.itemforge</BepInGuid>
+    <ModInfoClass>ItemForgePlugin</ModInfoClass>
+    <Description>DrakesWorkshop — YAML/JSON item definitions (stub).</Description>
+    <WebsiteUrl>https://github.com/drakethos/DrakesItemForge</WebsiteUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <ThunderstoreDependency Include="denikson-BepInExPack_Valheim-5.4.2333" />
+    <ThunderstoreDependency Include="ValheimModding-Jotunn-2.29.0" />
+    <ThunderstoreDependency Include="DrakeMods-DrakesCustomizeLibs-0.3.0" />
+  </ItemGroup>
+</Project>
