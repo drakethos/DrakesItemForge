@@ -4,11 +4,11 @@
     <ThunderstoreAuthor>DrakeMods</ThunderstoreAuthor>
     <RootNamespace>DrakesItemForge</RootNamespace>
     <AssemblyName>DrakesItemForge</AssemblyName>
-    <Version>0.1.0</Version>
+    <Version>0.2.0</Version>
     <BepInPluginName>DrakesItemForge</BepInPluginName>
     <BepInGuid>com.drakesworkshop.itemforge</BepInGuid>
     <ModInfoClass>ItemForgePlugin</ModInfoClass>
-    <Description>DrakesWorkshop — YAML/JSON item definitions (stub).</Description>
+    <Description>DrakesWorkshop — JSON curated custom item variants for Valheim.</Description>
     <WebsiteUrl>https://github.com/drakethos/DrakesItemForge</WebsiteUrl>
   </PropertyGroup>
   <ItemGroup>

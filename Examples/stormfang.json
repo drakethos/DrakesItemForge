@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "stormfang",
+  "template": "weapon",
+  "clone": "SwordIron",
+  "name": "Stormfang",
+  "description": "A blade infused with storm energy.",
+  "damage": {
+    "slash": 55,
+    "lightning": 20
+  },
+  "durability": 400,
+  "weight": 1.5,
+  "recipe": {
+    "station": "forge",
+    "level": 2,
+    "resources": [
+      { "item": "Iron", "amount": 20 },
+      { "item": "FreezeGland", "amount": 5 }
+    ]
+  }
+}

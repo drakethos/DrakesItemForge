@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "id": "hello_world_sword",
+  "template": "weapon",
+  "clone": "SwordWood",
+  "name": "Hello World Sword",
+  "description": "If you hold this blade, Item Forge loaded custom JSON successfully.",
+  "damage": {
+    "slash": 30
+  },
+  "durability": 200,
+  "weight": 0.8,
+  "recipe": {
+    "station": "workbench",
+    "level": 1,
+    "resources": [
+      { "item": "Wood", "amount": 10 },
+      { "item": "LeatherScraps", "amount": 2 }
+    ]
+  }
+}
