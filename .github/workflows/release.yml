@@ -116,8 +116,11 @@ jobs:
           VERSION="${{ steps.ver.outputs.version }}"
           PKG_DIR="DrakeMods-DrakesItemForge-${VERSION}"
           ZIP_NAME="DrakeMods-DrakesItemForge-${VERSION}.zip"
-          mkdir -p "$PKG_DIR"
-          cp bin/Release/DrakesItemForge.dll "$PKG_DIR/"
+          # Gale (and r2modman) only keep folder structure for files under plugins/ (or patchers/, monomod/, core/,
+          # config/); anything else is flattened to loose files. The DLL and every data folder therefore live under
+          # plugins/; only manifest.json, icon.png, README.md and CHANGELOG.md sit at the zip root.
+          mkdir -p "$PKG_DIR/plugins"
+          cp bin/Release/DrakesItemForge.dll "$PKG_DIR/plugins/"
           cp README.md                      "$PKG_DIR/"
           cp icon.png                       "$PKG_DIR/"
           cp CHANGELOG.md                   "$PKG_DIR/"
@@ -126,7 +129,11 @@ jobs:
             /p:ThunderstoreManifestDir="$PKG_DIR" \
             /t:WriteThunderstoreManifest \
             /v:minimal
-cd "$PKG_DIR" && zip -r "../$ZIP_NAME" . && cd ..
+          cd "$PKG_DIR" && zip -r "../$ZIP_NAME" . && cd ..
+
+          # Guard: simulate Gale's install rules. Fails if anything would be flattened out of its folder
+          # (only files under plugins/ keep their sub-folders), or a shipped data file is missing.
+          python3 .github/scripts/check-gale-layout.py "$ZIP_NAME" "DrakeMods-DrakesItemForge" --expect "DrakesItemForge.dll"
 
           echo "zip=$ZIP_NAME" >> "$GITHUB_OUTPUT"
           ls -lh "$ZIP_NAME"
